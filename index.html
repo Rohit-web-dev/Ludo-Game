@@ -12,11 +12,11 @@
 		<h1 id="result">Ludo Game</h1>
 		<div class="dice">
 			<p id="name1">Player 1</p>
-			<img src="images/dice1.png" id="check1">
+			<img src="dice1.png" id="check1">
 		</div>
 		<div class="dice">
 			<p id="name2">Player 2</p>
-			<img src="images/dice6.png" id="check2">
+			<img src="dice6.png" id="check2">
 		</div>
 
 		<div>
@@ -51,11 +51,11 @@
 	function myFun() {
 
 		var plr1 = Math.floor(Math.random() * 6) + 1;
-		var plr1dice = 'images/dice'+plr1+'.png';
+		var plr1dice = 'dice'+plr1+'.png';
 		document.getElementById('check1').setAttribute('src',plr1dice);
 
 		var plr2 = Math.floor(Math.random() * 6) + 1;
-		var plr2dice = 'images/dice'+plr2+'.png';
+		var plr2dice = 'dice'+plr2+'.png';
 		document.getElementById('check2').setAttribute('src',plr2dice);
 
 		if (plr1>plr2) {
