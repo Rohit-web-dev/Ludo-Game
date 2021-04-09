@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GAME</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container">
+		<h1 id="heading">Ludo Game</h1>
+		<div class="dice">
+			<p id="name1">Player1</p>
+			<img src="images/dice-1.png" id="check1">
+		</div>
+		<div class="dice">
+			<p id="name2">Player2</p>
+			<img src="images/dice-4.png" id="check2">
+		</div>
+		<div>
+			<button class="click" onclick="dicePlay()">Click Me</button>
+		</div>
+		<div>
+			<button class="edit" onclick="editName()">Edit Names</button>
+		</div>
+		<footer>
+			<h3>Copyright @2021 | Designed With by Your Rohit Kumar</h3>
+		</footer>
+	</div>
+
+	<script type="text/javascript">
+
+	var player1 = 'player1';
+	var player2 = 'player2';
+
+	function editName() {
+
+	    player1 = prompt('Change Player1 Name');
+	    player2 = prompt('Change Player2 Name');
+
+		document.getElementById('name1').innerHTML= player1;
+		document.getElementById('name2').innerHTML= player2;
+	}
+
+	function dicePlay() {
+
+		var plr1 = Math.floor(Math.random() * 6) +1;
+		var plr1dice = 'images/dice-'+plr1+'.png';
+		document.getElementById('check1').setAttribute('src',plr1dice);
+
+		var plr2 = Math.floor(Math.random() * 6) +1;
+		var plr2dice = 'images/dice-'+plr2+'.png';
+		document.getElementById('check2').setAttribute('src',plr2dice);
+
+		if (plr1>plr2) {
+			document.getElementById('heading').innerHTML = player1+" Won";
+		}
+		else if(plr1<plr2){
+			document.getElementById('heading').innerHTML = player2+" Won";
+		}
+		else{
+			document.getElementById('heading').innerHTML = "Draw";
+		}
+
+	}
+
+	</script>
+
+</body>
+</html>
